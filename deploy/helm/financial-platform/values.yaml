@@ -1,0 +1,12 @@
+namespace: financial-platform
+imageRegistry: ECR_REGISTRY
+tag: latest
+replicas: 2
+services:
+  - account-ingestion-service
+  - data-validation-service
+  - customer-eligibility-service
+  - account-segmentation-service
+  - enrollment-service
+  - data-transformation-service
+  - transaction-notification-service

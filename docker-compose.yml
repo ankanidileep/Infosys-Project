@@ -1,0 +1,83 @@
+{
+  "services": {
+    "gateway": {
+      "build": "./gateway",
+      "ports": [
+        "8080:8080"
+      ],
+      "depends_on": [
+        "account-ingestion-service"
+      ]
+    },
+    "account-ingestion-service": {
+      "build": "./services/account-ingestion-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "data-validation-service": {
+      "build": "./services/data-validation-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "customer-eligibility-service": {
+      "build": "./services/customer-eligibility-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "account-segmentation-service": {
+      "build": "./services/account-segmentation-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "enrollment-service": {
+      "build": "./services/enrollment-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "data-transformation-service": {
+      "build": "./services/data-transformation-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    },
+    "transaction-notification-service": {
+      "build": "./services/transaction-notification-service",
+      "environment": [
+        "SPRING_PROFILES_ACTIVE=docker"
+      ],
+      "expose": [
+        "8080"
+      ],
+      "restart": "unless-stopped"
+    }
+  }
+}

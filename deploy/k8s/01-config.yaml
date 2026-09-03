@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-config
+  namespace: financial-platform
+data:
+  LOG_LEVEL: "INFO"
+  TARGET_SYSTEM_URL: "http://transaction-notification-service:8080"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: platform-secret
+  namespace: financial-platform
+type: Opaque
+stringData:
+  DEMO_TOKEN: "change-me"
